@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Lesson Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: grid;
+            grid-gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Add Lesson</h2>
+        <form action="/addlesson" method="post">
+            <label for="course_id">Course ID:</label>
+            <input type="text" id="course_id" name="course_id" placeholder="Enter Course ID" required>
+
+            <label for="lesson_id">Lesson ID:</label>
+            <input type="text" id="lesson_id" name="l_id" placeholder="Enter Lesson ID" required>
+
+            <label for="lesson_name">Lesson Name:</label>
+            <input type="text" id="lesson_name" name="l_name" placeholder="Enter Lesson Name" required>
+
+            <label for="lesson_topics">Lesson Topics:</label>
+            <input type="text" id="lesson_topics" name="topics" placeholder="Enter Lesson Topics" required>
+
+            <label for="video_links">Video Links:</label>
+            <textarea id="video_links" name="link" rows="4" placeholder="Enter Video Links (one per line)" required></textarea>
+
+            <button type="submit">ADD LESSON</button>
+        </form>
+    </div>
+</body>
+</html>

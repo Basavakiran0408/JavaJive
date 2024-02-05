@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Black background */
+            margin: 0;
+            padding: 0;
+            color: #fff; /* White font color */
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #fff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #333; /* Darker gray for even rows */
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: rgb(255, 0, 0);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Courses</h1>
+        <table>
+			<thead>
+            <tr>
+                <th>CourseId</th>
+                <th>CourseName</th>
+                <th>CoursePrice</th>
+                <th>Lessons</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+             <tr th:each="clist:${lis}">
+                <td th:text="${clist.c_id}"></td>
+                <td th:text="${clist.c_name}"></td>
+                <td th:text="${clist.c_price}"></td>
+                <td th:text="${clist.lessons}"></td>
+                 <td><a th:href="@{/deleteCourse/{c_id}(c_id=${clist.c_id})}" th:method="post" class="button">Delete</a></td>
+            </tr>
+            <tbody>
+				
+				
+			</tbody>
+           
+        </table>
+       
+    </div>
+</body>
+</html>
